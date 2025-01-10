@@ -20,11 +20,10 @@ const BentoTilt: React.FC<BentoTiltProps> = ({ children, className = "" }) => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!itemRef.current) return;
 
-    const { left, top, width, height } =
-      itemRef.current.getBoundingClientRect();
+    const { left, width } = itemRef.current.getBoundingClientRect();
 
     const relativeX = (e.clientX - left) / width;
-    const relativeY = (e.clientY - left) / width;
+    // const relativeY = (e.clientY - left) / width;
 
     const tiltX = (relativeX - 0.5) * 5;
     const tiltY = (relativeX - 0.5) * -5;

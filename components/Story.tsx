@@ -7,6 +7,7 @@ const AnimatedTitle = dynamic(() => import("./AnimatedTitle"), { ssr: false });
 import gsap from "gsap";
 import RoundedCorners from "./RoundedCorners";
 import Button from "./Button";
+import Image from "next/image";
 
 const Story = () => {
   const frameRef = useRef<HTMLImageElement>(null);
@@ -23,7 +24,7 @@ const Story = () => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
+    const { clientX } = e;
     const element = frameRef.current;
 
     if (!element) return;
@@ -63,7 +64,7 @@ const Story = () => {
           <div className="story-img-container">
             <div className="story-img-mask">
               <div className="story-img-content">
-                <img
+                <Image
                   ref={frameRef}
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
