@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/all";
 // import AnimatedTitle from "./AnimatedTitle";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const AnimatedTitle = dynamic(() => import("./AnimatedTitle"), { ssr: false });
 
@@ -38,7 +39,7 @@ const About = () => {
         </h2>
 
         <AnimatedTitle
-          title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
+          title={`Disc<b>o</b>ver the world&apos;s <br /> largest shared <b>a</b>dventure`}
           containerClass="mt-5 !text-black text-center "
         />
 
@@ -53,10 +54,12 @@ const About = () => {
 
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
-          <img
-            src="img/about.webp"
+          <Image
+            src="/img/about.webp"
             alt="Background"
             className="relative left-0 top-0 size-full object-cover"
+            width={1920}
+            height={1080}
           />
         </div>
       </div>
