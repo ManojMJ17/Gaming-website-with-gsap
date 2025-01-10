@@ -73,6 +73,8 @@ const Story = () => {
                   src="/img/entrance.webp"
                   alt="entrance"
                   className="object-contain"
+                  width={1920}
+                  height={1080}
                 />
               </div>
             </div>

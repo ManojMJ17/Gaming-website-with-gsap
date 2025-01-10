@@ -53,7 +53,10 @@ const Hero: React.FC = () => {
           duration: 1,
           ease: "power1.inOut",
           onStart: () => {
-            nextVideoRef.current && void nextVideoRef.current.play();
+            // nextVideoRef.current && void nextVideoRef.current.play();
+            if (nextVideoRef.current) {
+              nextVideoRef.current.play();
+            }
           },
         });
         gsap.from("#current-video", {

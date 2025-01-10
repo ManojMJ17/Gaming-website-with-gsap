@@ -5,6 +5,7 @@ import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
+import Image from "next/image";
 
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 
@@ -62,7 +63,14 @@ const Navbar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <Image
+              src="/img/logo.png"
+              alt="logo"
+              className="w-10"
+              width={40} // Set a width for the image
+              height={40} // Set a height for the image
+              priority // Optional: Priority load for faster LCP
+            />
 
             <Button
               id="product-button"
